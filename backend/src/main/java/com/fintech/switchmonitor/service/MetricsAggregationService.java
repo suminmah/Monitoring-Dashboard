@@ -89,6 +89,7 @@ public class MetricsAggregationService {
 
     // Flush local buffers to Redis every 2 seconds
     @Scheduled(fixedRate = 2000)
+    @SuppressWarnings("null")
     public void flushToRedis() {
         long currentBucketId = Instant.now().toEpochMilli() / 10000;
         
